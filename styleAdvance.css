@@ -1,0 +1,159 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#Click {
+    position: absolute;
+    top: 30px; 
+    right: 60px;
+}
+
+#Click a {
+    font-size: 15px;
+    text-decoration: none; 
+    color: rgb(48, 48, 48);
+    margin-right: 10px; 
+}
+
+#Click a:hover {
+    text-decoration: underline; 
+}
+
+img {
+    position: absolute; 
+    top: 20px; 
+    width: 80px; 
+    height: auto;
+    left: 17px;
+}
+
+#AS {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 400; 
+    font-size: 20px;
+    color: #ec0000; 
+    position: absolute;
+    left: 46px;
+    top: 68px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e4e4e4; 
+    width: 100%; 
+    position: absolute; 
+    top: 130px; 
+}
+
+
+#find {
+    position: absolute;
+    font-family: 'Roboto', sans-serif; 
+    color: rgb(48, 48, 48);
+    font-size: 16px;
+    top: 167px;
+    left: 46px;
+}
+
+#toDo {
+    position: absolute;
+    font-family: 'Roboto', sans-serif; 
+    color: rgb(102, 102, 102);
+    font-size: 13.5px;
+    top: 171px;
+    right: 568px;
+}
+
+form {
+    position: absolute;
+    display: flex;
+    gap: 30px;
+    left: 46px; 
+    top: 215px; 
+}
+
+.front {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 13px;
+    color: rgb(48, 48, 48);
+    text-align: left;
+}
+
+form input[type="text"] {
+    position: relative;
+    top: 5px;
+    margin-bottom: 14px;
+    padding: 6px; 
+    width: 562px; 
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: #d4d4d4;
+}
+
+form input[type="text"]:focus {
+    outline: none; 
+    border: 0.5px solid rgb(27, 99, 223);
+    box-shadow: inset 0 0 2px 0 rgb(27, 99, 223); 
+}
+
+.submit-btn {
+    position: relative;
+    left: 225px;
+    background-color: #4285f4; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 2px; 
+    cursor: default; 
+    margin-top: 10px; 
+    transition: none;
+    border-color: #3b7ade;
+}
+
+.submit-btn:hover {
+    background-color: #357ae8; 
+}
+
+.submit-btn:active {
+    background-color: #3367d6; 
+}
+
+.last {
+    font-family: 'Roboto', sans-serif; 
+    font-size: 11px;
+    color: rgb(102, 102, 102);
+    text-align: left;
+}
+
+.last1 {
+    position: absolute;
+    right: 48px;
+    bottom: 163px;
+}
+
+.last2 {
+    position: absolute;
+    right: 76px;
+    bottom: 122px;
+}
+
+.last3 {
+    position: absolute;
+    right: -51px;
+    bottom: 80px;
+}
+
+.last4 {
+    position: relative;
+    top: 126px;
+    right: 15px;
+}
