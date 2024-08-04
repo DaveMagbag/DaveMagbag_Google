@@ -20,8 +20,7 @@
     <p id="find">Find pages with...</p>  
     <p id="toDo"><b>To do this in the search box</b></p>  
 
-
-    <form action="https://google.com/search">
+    <form id="advancedSearchForm">
         <div class="front">
             <p class="front1">all these words:<br><br></p>
             <p class="front1">this exact word or phrase:<br><br></p>
@@ -30,10 +29,10 @@
         </div>
 
         <div class="box">
-            <input type="text" name="q"><br>
-            <input type="text" name="q"><br>
-            <input type="text" name="q"><br>
-            <input type="text" name="q"><br>
+            <input type="text" id="allWords" name="allWords"><br>
+            <input type="text" id="exactPhrase" name="exactPhrase"><br>
+            <input type="text" id="anyWords" name="anyWords"><br>
+            <input type="text" id="noneWords" name="noneWords"><br>
             <input type="submit" value="Advanced Search" class="submit-btn">
         </div>
 
@@ -43,8 +42,36 @@
             <p class="last3">Type OR between all the words you want: miniature OR standard<br><br></p>
             <p class="last4">Put a minus sign just before words you don't want: <br>-rodent, -"Jack Russell"<br><br></p>
         </div>
-            
-        
     </form>
+
+    <script>
+        document.getElementById('advancedSearchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var allWords = document.getElementById('allWords').value.trim();
+            var exactPhrase = document.getElementById('exactPhrase').value.trim();
+            var anyWords = document.getElementById('anyWords').value.trim();
+            var noneWords = document.getElementById('noneWords').value.trim();
+
+            var query = '';
+
+            if (allWords) {
+                query += allWords + ' ';
+            }
+            if (anyWords) {
+                query += anyWords.split(/\s+/).map(word => word.trim()).filter(word => word).join(' OR ') + ' ';
+            }
+            if (exactPhrase) {
+                query += '"' + exactPhrase + '" ';
+            }
+            if (noneWords) {
+                query += '-' + noneWords + '';
+            }
+
+            var encodedQuery = encodeURIComponent(query.trim());
+
+            window.location.href = 'https://www.google.com/search?q=' + encodedQuery;
+        });
+    </script>
 </body>
 </html>

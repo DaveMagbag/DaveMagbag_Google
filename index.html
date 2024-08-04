@@ -14,12 +14,28 @@
 
     <div class="form-container">
         <form action="https://google.com/search">
-            <input type="text" name="q"><br>
+            <input type="text" name="q" id="searchInput"><br>
             <div class="button-container">
                 <input type="submit" value="Google Search">
-                <input type="submit" value="I'm Feeling Lucky" formaction="https://doodles.google/">
+                <input type="submit" value="I'm Feeling Lucky" formaction="https://doodles.google/" id="feelingLuckyBtn">
             </div>
         </form>
     </div>
+
+    <script>
+        var searchInput = document.getElementById('searchInput');
+        var feelingLuckyBtn = document.getElementById('feelingLuckyBtn');
+
+        document.forms[0].addEventListener('submit', function (event) {
+            if (event.submitter === feelingLuckyBtn) {
+                if (!searchInput.value.trim()) {
+                    feelingLuckyBtn.setAttribute('formaction', 'https://www.google.com/doodles');
+                } else {
+                    feelingLuckyBtn.setAttribute('formaction', 'https://www.google.com/search?btnI=I');
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
